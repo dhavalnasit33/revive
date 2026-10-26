@@ -1,0 +1,154 @@
+
+.checkout-page {
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 24px;
+  color: #29231f;
+}
+
+.checkout-page h1 {
+  margin-bottom: 8px;
+  font-size: 32px;
+}
+
+.checkout-subtitle {
+  color: #777;
+  margin-bottom: 28px;
+}
+
+.checkout-page h2 {
+  font-size: 21px;
+  margin-bottom: 18px;
+}
+
+.address-list {
+  display: grid;
+  gap: 16px;
+}
+
+.address-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid #ded8d2;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #fff;
+}
+
+.address-card.selected {
+  border: 2px solid #b78345;
+  background: #fffaf4;
+}
+
+.address-card input {
+  margin-top: 6px;
+  accent-color: #b78345;
+}
+
+.address-details {
+  flex: 1;
+}
+
+.address-heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.address-heading h3 {
+  margin: 0 0 8px;
+}
+
+.address-details p {
+  margin: 6px 0;
+  color: #625a54;
+}
+
+.default-label,
+.address-type {
+  display: inline-block;
+  padding: 4px 9px;
+  border-radius: 5px;
+  background: #f2e7d8;
+  color: #76512b;
+  font-size: 12px;
+}
+
+.continue-button,
+.back-button {
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 22px;
+  font-size: 15px;
+}
+
+.continue-button {
+  border: none;
+  background: #8b6035;
+  color: white;
+}
+
+.continue-button:hover {
+  background: #704b28;
+}
+
+.back-button {
+  margin-left: 12px;
+  border: 1px solid #d5ccc3;
+  background: white;
+  color: #29231f;
+}
+
+.checkout-error {
+  padding: 12px;
+  color: #a12626;
+  background: #fff0f0;
+  border-radius: 6px;
+}
+
+.checkout-message,
+.empty-address {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+
+.address-form {
+  display: grid;
+  gap: 14px;
+  margin: 20px 0;
+  padding: 22px;
+  border: 1px solid #ded8d2;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.address-form input,
+.address-form textarea,
+.address-form select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #d5ccc3;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.address-form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.address-form label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.address-form label input[type="checkbox"] {
+  width: auto;
+}

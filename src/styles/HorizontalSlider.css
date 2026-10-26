@@ -1,0 +1,124 @@
+
+/* ========================================
+   REUSABLE HORIZONTAL SLIDER
+======================================== */
+
+.horizontal-slider {
+  position: relative;
+  min-width: 0;
+  width: 100%;
+}
+
+.horizontal-slider-track {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-x pan-y;
+}
+
+.horizontal-slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal-slider-track.horizontal-slider-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.horizontal-slider-track.horizontal-slider-dragging > * {
+  pointer-events: none;
+}
+
+.horizontal-slider-track video,
+.horizontal-slider-track img {
+  -webkit-user-drag: none;
+}
+
+/* Navigation arrows */
+
+.horizontal-slider-arrow {
+  position: absolute;
+ top: calc((100vw - 48px - 96px) / 5 / 2);
+    transform: translateY(-50%);
+    z-index: 30;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+   color: #222222;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px #00000014;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.horizontal-slider-arrow svg {
+ display: block;
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+}
+
+.horizontal-slider-arrow:hover {
+  color: #ffffff;
+  background: #DA2074;
+  border-color: #DA2074;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.horizontal-slider-arrow-left {
+    left: -20px;
+}
+
+.horizontal-slider-arrow-right {
+  right: -15px;
+}
+
+/* Optional responsive arrow visibility */
+
+@media (max-width: 1200px) {
+  .horizontal-slider-arrow.hide-at-tablet {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .horizontal-slider-arrow.hide-at-mobile {
+    display: none;
+  }
+
+  .horizontal-slider-arrow.hide-at-tablet-and-mobile {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .horizontal-slider-track {
+    scroll-behavior: auto;
+  }
+
+  .horizontal-slider-arrow {
+    transition: none;
+  }
+}

@@ -1,0 +1,1314 @@
+#FFFFFF
+
+#222222
+
+#DA2074
+
+#000000
+
+#FAFAFA
+
+
+
+1. Home page 
+
+2. 
+\
+
+
+
+ Ultra-Small Phone Screens
+
+• 320px × 568px (Legacy Devices)
+• 360px × 800px (Samsung Galaxy A55)
+
+2. Standard Mobile Phone Screens
+
+• 375px × 667px (iPhone SE)
+• 393px × 852px (iPhone 16)
+• 412px × 924px (Pixel 9)
+• 412px × 924px (Pixel 10)
+• 427px × 952px (Pixel 9 Pro)
+
+3. Foldable Mobile Screens (Folded Layout)
+
+• 412px × 922px (Pixel 9 Pro Fold)
+• 412px × 968px (Galaxy Z Fold 6)
+
+4. Custom & Tall Handheld Formats
+
+• 960px × 1440px (Custom Viewport Specification)
+
+5. Large Tablet Screens
+
+• 768px × 1024px (iPad Mini)
+
+
+
+
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+  width: 100%;
+  max-width: 1920px;
+  height: 80px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  box-shadow: 0 4px 16px #00000014;
+  position: sticky;
+  top: 40px;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.header-inner {
+  width: 100%;
+  max-width: 1640px;
+  height: 80px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BRAND LOGO
+========================= */
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  height: 47px;
+  margin-right: 48px;
+  color: #222222;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 100%;
+  text-decoration: none;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+/* =========================
+   SHOP ALL BUTTON
+========================= */
+
+.shop-all-wrapper {
+  position: relative;
+  z-index: 350;
+  width: 163px;
+  min-width: 163px;
+  height: 48px;
+  flex: 0 0 163px;
+  margin-right: 40px;
+  box-sizing: border-box;
+}
+
+.shop-all-button {
+  position: relative;
+  z-index: 372;
+  width: 100%;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  background: #DA2074;
+  color: #FFFFFF;
+  border: 1px solid #DA2074;
+  border-radius: 8px;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-radius 0.2s ease;
+}
+
+.shop-all-button:hover {
+  background: #B91860;
+  border-color: #B91860;
+}
+
+
+.shop-all-wrapper.shop-all-open .shop-all-dropdown {
+  top: calc(100% + 6px);
+  border-top: 1px solid #DDDDDD;
+  border-radius: 8px;
+}
+
+.shop-all-grid-icon {
+  width: 12px;
+  height: 12px;
+  flex: 0 0 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 3px);
+  grid-template-rows: repeat(3, 3px);
+  gap: 2px;
+  align-content: center;
+  justify-content: center;
+}
+
+.shop-all-dot {
+  width: 3px;
+  height: 3px;
+  display: block;
+  background: #FFFFFF;
+  border-radius: 50%;
+}
+
+.shop-all-button > span:not(.shop-all-grid-icon) {
+  display: inline-flex;
+  align-items: center;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.shop-all-chevron {
+  width: 12px;
+  height: 12px;
+  flex: 0 0 12px;
+  font-size: 11px;
+  color: #FFFFFF;
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
+}
+
+.shop-all-chevron.rotated {
+  transform: rotate(180deg);
+}
+
+/* =========================
+   SHOP ALL DROPDOWN
+========================= */
+
+.shop-all-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  margin: 0;
+  padding: 8px 0;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-top: 1px solid #DDDDDD;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 6px 18px #0000001A;
+  z-index: 360;
+}
+
+.shop-all-wrapper.shop-all-open .shop-all-dropdown {
+  display: block;
+}
+
+.shop-all-dropdown a {
+  display: block;
+  padding: 11px 16px;
+  color: #222222;
+  background: #FFFFFF;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.shop-all-dropdown a:hover,
+.shop-all-dropdown a:focus-visible {
+  color: #DA2074;
+  background: #FAFAFA;
+  outline: none;
+}
+
+/* =========================
+   JEWELLERY MEGA MENU
+========================= */
+
+.jewellery-mega-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: min(1100px, calc(100vw - 40px));
+  margin: 0;
+  color: #222222;
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-radius: 15px;
+  box-shadow: 0 12px 40px #00000020;
+  overflow: hidden;
+  z-index: 370;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(0);
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.jewellery-mega-menu {
+  top: calc(100% + 12px);
+}
+
+.shop-all-wrapper.shop-all-open .jewellery-mega-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Keep the mouse connected across the gap */
+.shop-all-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jewellery-mega-menu,
+  .shop-all-chevron {
+    transition: none;
+  }
+}
+
+/* Mega menu top */
+
+.mega-menu-top {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr) 270px;
+  gap: 28px;
+  padding: 28px;
+  background: #FFFFFF;
+}
+
+/* Sidebar */
+
+.mega-menu-sidebar {
+  padding-right: 20px;
+  border-right: 1px solid #DDDDDD;
+  background: #FFFFFF;
+}
+
+.mega-menu-eyebrow {
+  margin: 0 0 14px;
+  color: #666666;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  line-height: 1.5;
+}
+
+.mega-tab {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #222222;
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-radius: 8px;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.mega-tab:hover,
+.mega-tab.active {
+  color: #DA2074;
+  background: #FAFAFA;
+  border-color: #DA2074;
+}
+
+.mega-tab-arrow {
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* Categories */
+
+.mega-menu-categories {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+}
+
+.mega-menu-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.mega-menu-heading .mega-menu-eyebrow {
+  margin-bottom: 6px;
+}
+
+.mega-menu-heading h3 {
+  margin: 0;
+  color: #222222;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.mega-menu-count {
+  flex-shrink: 0;
+  color: #666666;
+  font-size: 12px;
+}
+
+.mega-category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.mega-category-link {
+  min-width: 0;
+  min-height: 58px;
+  padding: 9px 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #222222;
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-radius: 9px;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.mega-category-link:hover {
+  color: #DA2074;
+  background: #FAFAFA;
+  border-color: #DA2074;
+}
+
+.mega-category-icon {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #DA2074;
+  background: #FAFAFA;
+  border-radius: 8px;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.mega-category-icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.category-diamond {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #DA2074;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.mega-menu-message {
+  padding: 20px 0;
+  color: #666666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.mega-all-link {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  color: #DA2074;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.mega-all-link:hover {
+  color: #B91860;
+}
+
+/* Price ranges */
+
+.mega-price-label {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  color: #222222;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.mega-category-link:has(.mega-price-label) {
+  min-height: 44px;
+  height: auto;
+  justify-content: flex-start;
+}
+
+/* Promotional card */
+
+.mega-promo-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #DDDDDD;
+}
+
+.mega-promo-image {
+  height: 170px;
+  position: relative;
+  overflow: hidden;
+  background: #FAFAFA;
+}
+
+.mega-promo-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.mega-promo-card:hover .mega-promo-image img {
+  transform: scale(1.05);
+}
+
+.mega-promo-label {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  padding: 7px 10px;
+  color: #FFFFFF;
+  background: #222222D9;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.mega-promo-content {
+  padding: 18px;
+  background: #FFFFFF;
+}
+
+.mega-promo-content .mega-menu-eyebrow {
+  margin-bottom: 8px;
+}
+
+.mega-promo-content h3 {
+  margin: 0 0 16px;
+  color: #222222;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.mega-promo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #DA2074;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.mega-promo-link:hover {
+  color: #B91860;
+}
+
+/* Mega menu bottom banner */
+
+.mega-menu-bottom {
+  min-height: 86px;
+  padding: 16px 28px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #FAFAFA;
+  border-top: 1px solid #DDDDDD;
+}
+
+.mega-bottom-thumbnails {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.mega-bottom-thumbnails img {
+  width: 43px;
+  height: 43px;
+  margin-left: -8px;
+  object-fit: cover;
+  border: 2px solid #FFFFFF;
+  border-radius: 50%;
+}
+
+.mega-bottom-thumbnails img:first-child {
+  margin-left: 0;
+}
+
+.mega-bottom-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mega-bottom-title {
+  color: #222222;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.mega-bottom-description {
+  color: #666666;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.mega-view-all {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  padding: 11px 16px;
+  color: #FFFFFF;
+  background: #DA2074;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.mega-view-all:hover {
+  color: #FFFFFF;
+  background: #B91860;
+}
+
+/* =========================
+   MAIN NAVIGATION
+========================= */
+
+.main-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-shrink: 0;
+  padding: 0;
+  color: #222222;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: #DA2074;
+}
+
+.nav-chevron {
+  font-size: 11px;
+  transition: transform 0.2s ease;
+}
+
+.collection-dropdown-message {
+  display: block;
+  padding: 11px 16px;
+  color: #666666;
+  font-size: 13px;
+  white-space: nowrap;
+  background: #FFFFFF;
+}
+
+/* =========================
+   NAVIGATION DROPDOWNS
+========================= */
+
+.nav-dropdown-button {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.nav-dropdown-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  isolation: isolate;
+}
+
+/* Transparent bridge: mouse can cross the gap */
+.nav-dropdown-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: transparent;
+}
+
+/* Dropdown panel with visible top border and gap */
+.nav-dropdown {
+  display: block;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 180px;
+  margin: 0;
+  padding: 8px 0;
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px #0000001A;
+  z-index: 400;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(0);
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+/* Open state controlled by your existing React class */
+.nav-dropdown-wrapper.dropdown-open {
+  z-index: 410;
+}
+
+.nav-dropdown-wrapper.dropdown-open .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Dropdown links */
+.nav-dropdown a {
+  display: block;
+  padding: 11px 16px;
+  color: #222222;
+  background: #FFFFFF;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-dropdown a:hover,
+.nav-dropdown a:focus-visible {
+  color: #DA2074;
+  background: #FAFAFA;
+  outline: none;
+}
+
+.nav-dropdown-wrapper.dropdown-open .nav-chevron {
+  transform: rotate(180deg);
+}
+
+/* =========================
+   NEW NAV LINK AND STARS
+========================= */
+
+.new-nav-link {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+  font-family: "Roboto Flex", sans-serif;
+  padding: 0 16px;
+}
+
+.new-nav-text {
+  color: #222222;
+  font-size: 18px;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.new-nav-link:hover .new-nav-text {
+  color: #DA2074;
+}
+
+.new-star {
+  color: #DA2074;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.new-star-left {
+  left: 2px;
+  bottom: -8px;
+}
+
+.new-star-right {
+  right: 2px;
+  top: -10px;
+}
+
+.new-nav-link:hover .new-star {
+  opacity: 1;
+  visibility: visible;
+}
+
+.new-nav-link:hover .new-star-left {
+  animation: rotateLeftOnce 0.4s ease-out 1 forwards;
+}
+
+.new-nav-link:hover .new-star-right {
+  animation: rotateRightOnce 0.4s ease-out 1 forwards;
+}
+
+@keyframes rotateLeftOnce {
+  0% {
+    transform: scale(0.8) rotate(0deg);
+  }
+
+  100% {
+    transform: scale(1.1) rotate(-70deg);
+  }
+}
+
+@keyframes rotateRightOnce {
+  0% {
+    transform: scale(0.8) rotate(0deg);
+  }
+
+  100% {
+    transform: scale(1.1) rotate(-80deg);
+  }
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.header-search {
+  width: 360px;
+  height: 56px;
+  flex: 0 0 360px;
+  min-width: 360px;
+  max-width: 360px;
+  margin-left: auto;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #F1F1F1;
+  border: 1px solid #DDDDDD;
+  border-radius: 50px;
+  transition: border-color 0.2s ease;
+}
+
+.header-search:focus-within {
+  border-color: #DA2074;
+}
+
+.search-icon {
+  flex-shrink: 0;
+  color: #444444;
+  font-size: 17px;
+}
+
+.header-search input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #222222;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.header-search input::placeholder {
+  color: #666666;
+  opacity: 1;
+}
+
+/* =========================
+   HEADER ICONS
+========================= */
+
+.header-actions {
+  width: 168px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex: 0 0 168px;
+  margin-left: 24px;
+}
+
+.header-icon-button {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: #FFFFFF;
+  color: #222222;
+  font-size: 22px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.header-icon-button svg {
+  width: 40px;
+  height: 40px;
+  stroke: #222222;
+  stroke-width: 1.2;
+  transition: stroke 0.2s ease;
+}
+
+.header-icon-button:hover svg,
+.header-icon-button:focus-visible svg {
+  fill: none;
+  stroke: #DA2074;
+}
+
+
+
+
+
+
+/* =========================
+   SEARCH SUGGESTIONS ONLY
+========================= */
+
+/* Search container */
+.header-search-container {
+  position: relative;
+  flex: 0 0 360px;
+  width: 360px;
+  min-width: 0;
+  max-width: 360px;
+  margin-left: auto;
+  z-index: 1100;
+}
+
+/* Preserve the existing search bar */
+.header-search-container .header-search {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  flex: 0 0 56px;
+  margin-left: 0;
+}
+
+/* =========================================
+   MAIN FLOATING DROPDOWN (ALL-AROUND SHADOW)
+========================================= */
+
+.search-suggestions-dropdown {
+  position: absolute;
+  top: calc(100% + 8px); 
+  left: 0;               
+  right: auto;           
+
+  width: 460px; 
+  max-width: calc(100vw - 32px);
+  max-height: min(540px, calc(100vh - 110px));
+
+  padding: 18px; 
+  box-sizing: border-box;
+
+  background: #FFFFFF;    
+  color: #222222;
+
+  border: 1px solid #E5E7EB; 
+  border-radius: 12px; 
+
+  /* FIXED: Multi-directional shadow layers to project depth UPWARDS and downwards evenly */
+ box-shadow:
+  0 4px 6px -1px rgba(0, 0, 0, 0.05),
+  0 -4px 6px -1px rgba(0, 0, 0, 0.03),
+  0 10px 15px -3px rgba(0, 0, 0, 0.08),
+  0 -10px 15px -3px rgba(0, 0, 0, 0.08),
+  0 20px 25px -5px rgba(0, 0, 0, 0.1),
+  0 -20px 25px -5px rgba(0, 0, 0, 0.03);
+
+
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior: contain;
+
+  z-index: 1200;
+  animation: lumoria-dropdown-enter 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.search-suggestions-dropdown::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes lumoria-dropdown-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   SECTION SPACING & SEPARATORS
+========================================= */
+
+.search-dropdown-section {
+  min-width: 0;
+}
+
+.search-dropdown-section + .search-dropdown-section {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #F3F4F6;
+}
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.search-dropdown-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin: 0 0 12px;
+  padding: 0;
+
+  color: #1F2937;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+/* Clear recent searches button */
+.search-dropdown-heading button {
+  flex-shrink: 0;
+  padding: 4px 0;
+  border: none;
+  background: transparent;
+
+  color: #DA2074;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.search-dropdown-heading button:hover {
+  color: #B91860;
+}
+
+/* =========================================
+   RECENT & TRENDING SEARCH GRID (FIXED BORDERS)
+========================================= */
+
+.search-trending-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px; 
+  width: 100%;
+}
+
+/* Search suggestion pills */
+.search-trending-grid .search-suggestion-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 34px; 
+  margin: 0;
+  padding: 4px 8px; 
+
+  box-sizing: border-box;
+  border: 1px solid #D1D5DB; /* FIXED: Darker, clean visible base border */
+  border-radius: 999px;
+
+  background: #F9FAFB;
+  color: #4B5563;
+
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.search-trending-grid .search-suggestion-item svg {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+  color: #DA2074;
+}
+
+.search-trending-grid .search-suggestion-item span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Premium pink hover */
+.search-trending-grid .search-suggestion-item:hover {
+  transform: translateY(-1px);
+  border-color: #DA2074; /* FIXED: Smoothly changes to pink on hover */
+  background: #FFF5F9;
+  color: #DA2074;
+  box-shadow: 0 4px 10px rgba(218, 32, 116, 0.06);
+}
+
+.search-trending-grid .search-suggestion-item:active {
+  transform: translateY(0);
+}
+
+.search-trending-grid .search-suggestion-item:focus-visible,
+.search-category-card:focus-visible,
+.search-view-all:focus-visible {
+  outline: 2px solid #DA2074;
+  outline-offset: 3px;
+}
+
+/* =========================================
+   SHOP BY CATEGORY — FOUR CRISP SQUARE CARDS
+========================================= */
+
+.search-category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+.search-category-card {
+  display: block;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #222222;
+  font-family: "Roboto Flex", sans-serif;
+  text-align: center;
+  cursor: pointer;
+}
+
+.search-category-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1; 
+  object-fit: cover;
+  box-sizing: border-box;
+  border: 1px solid #E5E7EB;
+  border-radius: 4px; 
+  background: #F9FAFB;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.search-category-card:hover img {
+  transform: translateY(-2px);
+  border-color: #DA2074;
+  box-shadow: 0 4px 12px rgba(218, 32, 116, 0.1);
+}
+
+.search-category-card span {
+  display: block;
+  margin-top: 6px;
+  padding: 0 2px;
+  color: #374151;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease;
+}
+
+.search-category-card:hover span {
+  color: #DA2074;
+}
+
+
+
+/* Hide the browser's default search clear button */
+.header-search-container input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+/* Keep only the custom clear button */
+.header-search-container .search-clear-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 28px;
+  height: 28px;
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #666666;
+
+  cursor: pointer;
+}
+
+.header-search-container .search-clear-button svg {
+  width: 17px;
+  height: 17px;
+}
+
+.header-search-container .search-clear-button:hover {
+  background: #FFF0F6;
+  color: #DA2074;
+}
+
+
+
+/* =========================================
+   VIEW ALL SEARCH RESULTS
+========================================= */
+
+.search-view-all {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 40px;
+  margin-top: 16px;
+  padding: 10px 14px;
+  box-sizing: border-box;
+  border: 1px solid #DA2074;
+  border-radius: 8px;
+  background: #DA2074;
+  color: #FFFFFF;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.search-view-all:hover {
+  border-color: #B91860;
+  background: #B91860;
+  box-shadow: 0 4px 10px rgba(218, 32, 116, 0.15);
+}
+
+.search-view-all:active {
+  transform: translateY(1px);
+}
+
+/* =========================================
+   EMPTY SEARCH MESSAGE
+========================================= */
+
+.search-empty-message {
+  margin: 0;
+  padding: 4px 0;
+  color: #9CA3AF;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 11px;
+  line-height: 1.7;
+}

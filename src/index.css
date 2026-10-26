@@ -1,0 +1,103 @@
+
+/* ========================================
+   FONTS
+======================================== */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Austin Trial';
+  src:
+    url('./fonts/Austin-Trial-Medium.woff2') format('woff2'),
+    url('./fonts/Austin-Trial-Medium.woff') format('woff'),
+    url('./fonts/Austin-Trial-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========================================
+   GLOBAL RESET
+======================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  scroll-behavior: smooth;
+
+  /* Prevent horizontal page scrolling */
+  overflow-x: clip;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
+#collections,
+#new-arrivals {
+  scroll-margin-top: 130px;
+}
+/* ========================================
+   BODY
+======================================== */
+
+body {
+  width: 100%;
+  max-width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background-color: #fffdf9;
+  font-family: "Roboto Flex", sans-serif;
+
+  /* Only the page's vertical scrolling is allowed */
+  overflow-x: clip;
+}
+
+/* ========================================
+   REACT ROOT
+======================================== */
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+/* ========================================
+   RESPONSIVE MEDIA
+======================================== */
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+/* Prevent flex/grid children from forcing page width */
+.row,
+section,
+main,
+header,
+footer {
+  min-width: 0;
+}

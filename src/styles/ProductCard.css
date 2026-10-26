@@ -1,0 +1,803 @@
+/* ========================================
+   PRODUCT CARD
+======================================== */
+
+.product-card {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  box-sizing: border-box;
+  font-family: "Roboto Flex", sans-serif;
+}
+
+/* ========================================
+   IMAGE BOX: 308 x 308
+======================================== */
+
+
+
+.product-image-box {
+  position: relative;
+  width: 100%;
+  max-width: 308px;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #DDDDDD;
+  border-radius: 16px;
+  background: #FAFAFA;
+  box-sizing: border-box;
+}
+
+/* Image fits inside the box with matching rounded corners */
+.product-image-link {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.product-image-link img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 15px;
+}
+
+/* Placeholder */
+
+.product-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #777777;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* Discount badge */
+
+
+/* Wishlist */
+
+.product-wishlist {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  color: #222222;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.product-wishlist svg {
+  width: 18px;
+  height: 18px;
+}
+
+.product-wishlist:hover,
+.product-wishlist.active {
+  color: #DA2074;
+  border-color: #DA2074;
+}
+
+/* ========================================
+   DETAILS: BELOW IMAGE
+======================================== */
+
+.product-details {
+  width: 100%;
+  max-width: 308px;
+  min-width: 0;
+  min-height: 224px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+/* Rating */
+
+/* Rating: 4.5 ★ 126 Reviews */
+.product-rating {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.product-rating-value {
+  color: #222222;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.product-stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #F5A122;
+}
+
+.product-stars svg {
+  width: 16px;
+  height: 16px;
+}
+
+.product-review-count {
+  color: #666666;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* Product name */
+.product-name {
+  display: -webkit-box;
+  width: 100%;
+  overflow: hidden;
+  color: #222222;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.product-name:hover {
+  color: #DA2074;
+}
+
+/* Product description below the name */
+/* Product description below the name */
+.product-description {
+  display: -webkit-box;
+  width: 100%;
+  height: 48px;
+  min-height: 48px;
+  margin: 6px 0 0;
+  padding: 0;
+  overflow: hidden;
+  color: #444444;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* Discounted and original prices */
+.product-prices {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+  min-height: 27px;
+  margin-top: 15px;
+  box-sizing: border-box;
+}
+
+.product-price {
+  color: #222222;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.product-original-price {
+  color: #666666;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: line-through;
+}
+
+/* CSS Layout Specifications */
+.product-discount-text {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Layout Sizing & Padding Constraints */
+  padding: 4px 12px;
+  height: auto;
+  width: fit-content;
+
+  /* Color Properties */
+  color: #0EA652;
+  background-color: #E7F7F2;
+  border: 1px solid #0EA652;
+  border-radius: 20px;
+
+  /* Typography Specifications */
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+
+/* ========================================
+   BUTTONS: SIDE BY SIDE
+======================================== */
+
+.product-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 144px));
+  gap: 20px;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 16px;
+  box-sizing: border-box;
+}
+
+.add-cart-button,
+.quick-buy-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 144px;
+  max-width: 100%;
+  padding: 0 8px;
+  box-sizing: border-box;
+  border-radius: 24px;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    color 200ms ease,
+    background-color 200ms ease,
+    border-color 200ms ease;
+}
+
+.add-cart-button {
+  height: 45px;
+  color: #000000;
+  background: #FFFFFF;
+  border: 1.5px solid #000000;
+}
+
+.quick-buy-button {
+  height: 43px;
+  color: #FFFFFF;
+  background: #222222;
+  border: 1.5px solid #222222;
+}
+
+.quick-buy-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.add-cart-button:hover {
+  background: #FFFFFF;
+  color: #707070;
+  border-color: #8C8C8C;
+}
+
+.quick-buy-button:hover {
+  color: #FFFFFF;
+  background: #DA2074;
+  border-color: #DA2074;
+}
+
+.add-cart-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Status message */
+
+.product-message {
+  width: 100%;
+  margin: 8px 0 0;
+  color: #444444;
+  font-size: 12px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+/* ========================================
+   DESKTOP: SHOW NORMAL BUTTONS ONLY
+======================================== */
+
+.product-image-cart {
+  display: none;
+}
+
+.product-cart-badge {
+  display: none;
+}
+
+
+
+
+
+
+/* ========================================
+   MOBILE: PRODUCT CARD
+======================================== */
+
+
+@media (max-width: 480px) {
+  /* PRODUCT CARD */
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 210px;
+    gap: 8px;
+
+    width: 210px;
+    min-width: 210px;
+    max-width: 210px;
+
+    height: 388px;
+    min-height: 388px;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* ========================================
+     IMAGE BOX
+     CRITICAL FIX: overflow changed to visible 
+     so button can overflow borders elegantly.
+  ======================================== */
+
+  .product-card .product-image-box {
+    position: relative;
+    flex: 0 0 210px;
+
+    width: 210px;
+    min-width: 210px;
+    max-width: 210px;
+
+    height: 210px;
+    min-height: 210px;
+
+    margin: 0;
+    padding: 0;
+
+    aspect-ratio: 1 / 1;
+    overflow: visible; /* FIXED from hidden */
+
+    background: #FAFAFA;
+    border: 1px solid #DDDDDD;
+    border-radius: 10px;
+
+    box-sizing: border-box;
+  }
+
+  /* ========================================
+     PRODUCT IMAGE
+     Now masked correctly by its own container
+  ======================================== */
+
+  .product-card .product-image-link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+    border-radius: 9px; /* Matches parent card layout curve */
+    box-sizing: border-box;
+  }
+
+  .product-card .product-image-link img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    border-radius: 9px;
+  }
+
+  .product-card .product-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    color: #777777;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  /* ========================================
+     WISHLIST HEART
+     Top-right corner
+  ======================================== */
+
+  .product-card .product-wishlist {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+
+    margin: 0;
+    padding: 0;
+
+    color: #222222;
+    background: #FFFFFF;
+
+    border: 1px solid #DDDDDD;
+    border-radius: 50%;
+
+    cursor: pointer;
+    box-sizing: border-box;
+
+    transition: color 200ms ease, border-color 200ms ease;
+  }
+
+  .product-card .product-wishlist svg {
+    display: block;
+    width: 17px;
+    height: 17px;
+    stroke-width: 1.5;
+  }
+
+  .product-card .product-wishlist:hover,
+  .product-card .product-wishlist.active {
+    color: #DA2074;
+    border-color: #DA2074;
+  }
+
+  /* ========================================
+     MOBILE ADD TO CART
+     FIXED: Set to circular floating positioning 
+     matching your first image perfectly.
+  ======================================== */
+
+  .product-card .product-image-cart {
+    position: absolute;
+    right: -10px;       /* Negative offset shifts it outwards over the border */
+    bottom: -10px;     /* Negative offset shifts it downwards over the border */
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;        /* Optimized container layout scale */
+    height: 44px;
+    min-width: 44px;
+
+    margin: 0;
+    padding: 0;
+
+    color: #FFFFFF;
+    background: #FAFAFA;
+
+    /* Clean subtle circular border configuration setup */
+    border: 1px solid #DDDDDD;
+    border-radius: 50%; /* FIXED from 10px 0 9px 0 */
+    
+    /* Adds the smooth floating shadow display visible in image 1 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+    cursor: pointer;
+    box-sizing: border-box;
+
+    transition: transform 150ms ease, color 200ms ease;
+  }
+
+  .product-card .product-image-cart:active {
+    transform: scale(0.95);
+  }
+
+  /* Your imported cart image */
+  .product-card .product-cart-image {
+    display: block;
+    width: 26px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  
+
+  /* Pink plus badge */
+  .product-card .product-cart-badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 5;
+
+    display: block;
+
+    width: 15px;
+    height: 15px;
+
+    background: #DA2074; /* Matches your brand color profile scheme */
+    border: 1.5px solid #FFFFFF;
+    border-radius: 50%;
+
+    box-sizing: border-box;
+  }
+
+  .product-card .product-cart-badge::before,
+  .product-card .product-cart-badge::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    background: #FFFFFF;
+    border-radius: 1px;
+
+    transform: translate(-50%, -50%);
+  }
+
+  .product-card .product-cart-badge::before {
+    width: 7px;
+    height: 1.5px;
+  }
+
+  .product-card .product-cart-badge::after {
+    width: 1.5px;
+    height: 7px;
+  }
+
+  .product-card .product-image-cart:hover {
+    color: #DA2074;
+  }
+
+  .product-card .product-image-cart:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  /* ========================================
+     PRODUCT DETAILS
+  ======================================== */
+
+  .product-card .product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 0 0 170px;
+
+    width: 210px;
+    min-width: 210px;
+    max-width: 210px;
+
+    height: 170px;
+    min-height: 170px;
+
+    margin: 0;
+    padding: 4px 4px 0; /* Added subtle inner indent space */
+
+    box-sizing: border-box;
+  }
+
+  /* Rating */
+  .product-card .product-rating {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 4px;
+
+    width: 100%;
+    margin: 0 0 5px;
+
+    overflow: hidden;
+  }
+
+  .product-card .product-rating-value {
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: bold;
+  }
+
+  .product-card .product-stars {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 1px;
+    color: #FFB800;
+  }
+
+  .product-card .product-stars svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .product-card .product-review-count {
+    font-size: 10px;
+    color: #777777;
+    white-space: nowrap;
+  }
+
+  /* Product name */
+  .product-card .product-name {
+    display: -webkit-box;
+
+    width: 100%;
+    margin: 0;
+
+    overflow: hidden;
+    overflow-wrap: anywhere;
+
+    color: #222222;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+    text-decoration: none;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  /* Product description */
+  .product-card .product-description {
+    display: -webkit-box;
+
+    width: 100%;
+    height: auto;
+    min-height: 0;
+
+    margin: 4px 0 0;
+    padding: 0;
+
+    color: #666666;
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0;
+
+    overflow: hidden;
+    overflow-wrap: anywhere;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  /* Prices */
+  .product-card .product-prices {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    width: 100%;
+    min-height: 20px;
+    margin-top: 5px;
+  }
+
+  .product-card .product-price {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .product-card .product-original-price {
+    font-size: 11px;
+    color: #999999;
+    text-decoration: line-through;
+  }
+
+  .product-card .product-discount-text {
+    padding: 3px 4px;
+    font-size: 10px;
+    color: #0EA652;
+    font-weight: bold;
+  }
+
+  /* Buttons */
+  .product-card .product-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    width: 210px;
+    margin-top: auto;
+    padding-top: 0;
+  }
+
+  .product-card .add-cart-button {
+    display: none;
+  }
+
+  .product-card .quick-buy-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    width: 100%;
+    height: 38px;
+    min-height: 38px;
+
+    padding: 0 12px;
+
+    color: #FFFFFF;
+    background: #222222;
+    border: 1px solid #222222;
+    border-radius: 50px;
+
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+
+    box-sizing: border-box;
+  }
+
+  .product-card .quick-buy-button:hover {
+    color: #FFFFFF;
+    background: #DA2074;
+    border-color: #DA2074;
+  }
+
+  .product-card .quick-buy-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Status message */
+  .product-card .product-message {
+    width: 100%;
+    margin: 3px 0 0;
+
+    font-size: 10px;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+}

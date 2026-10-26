@@ -1,0 +1,829 @@
+/* ========================================
+   COLLECTION SHOWCASE
+======================================== */
+
+.collection-showcase {
+  width: calc(100% - 48px);
+  max-width: 1640px;
+  margin: 160px auto 0;
+  font-family: "Roboto Flex", sans-serif;
+  box-sizing: border-box;
+  background-color: #FAFAFA;
+}
+
+/* SECTION HEADING */
+
+.collection-showcase-heading {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.collection-showcase-heading h2 span {
+  font-family: "Austin Trial", Georgia, serif;
+  font-size: 40px;
+  font-weight: 500;
+  color: #666666;
+}
+
+.collection-showcase-heading h2 {
+  margin: 0;
+  color: #000000;
+  font-family: "Austin Trial", Georgia, serif;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+/* COLLECTION TABS */
+
+.collection-showcase-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-bottom: 45px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.collection-showcase-tabs button {
+  position: relative;
+  flex-shrink: 0;
+  padding: 12px 2px;
+  border: 0;
+  background: transparent;
+  color: #666666;
+  font-family: "Roboto Flex";
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.collection-showcase-tabs button:hover,
+.collection-showcase-tabs button.active {
+  color: #000000;
+}
+
+.collection-showcase-tabs button.active {
+  font-weight: 600;
+}
+
+.collection-showcase-tabs button.active::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 3px;
+  background: #500720;
+  content: "";
+}
+
+/* MAIN CONTENT */
+
+.collection-showcase-content {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* LEFT PROMOTIONAL BANNER */
+
+.collection-showcase-banner {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 520px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #dddddd;
+
+}
+
+
+
+.collection-showcase-banner-image {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+
+}
+
+.collection-showcase-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.30) 35%,
+      rgba(0, 0, 0, 0.02) 70%);
+}
+
+.collection-showcase-banner-text {
+  position: relative;
+  z-index: 2;
+  padding: 24px;
+  color: #ffffff;
+}
+
+
+
+.collection-showcase-banner-text h3 {
+  margin: 0 0 10px;
+  font-family: "Austin Trial", Georgia, serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.collection-showcase-banner-text p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* PRODUCT SLIDER CONTAINER */
+
+.collection-showcase-products {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* HORIZONTAL SLIDER TRACK */
+
+.collection-showcase-track {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+}
+
+.collection-showcase-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* EACH PRODUCT ITEM */
+
+
+.collection-showcase-product-item {
+  flex: 0 0 calc((100% - 48px) / 4);
+  min-width: 0;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+}
+
+
+/* KEEP REUSABLE PRODUCT CARD WITHIN ITS ITEM */
+
+.collection-showcase-product-item>* {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* SLIDER ARROWS */
+
+.collection-showcase-arrow {
+  position: absolute;
+
+  top: calc((100vw - 48px - 96px) / 5 / 2);
+  transform: translateY(-100%);
+  z-index: 30;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  color: #222222;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px #00000014;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.collection-showcase-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+.collection-showcase-arrow:hover {
+  border-color: #DA2074;
+  background: #DA2074;
+  color: #ffffff;
+}
+
+.collection-showcase-arrow-left {
+  left: -15px;
+}
+
+.collection-showcase-arrow-right {
+  right: -15px;
+}
+
+/* LOADING AND EMPTY MESSAGES */
+
+.collection-showcase-message {
+  padding: 24px;
+  color: #666666;
+  font-size: 14px;
+}
+
+
+
+/* VIEW ALL BUTTON */
+
+.collection-showcase-view-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 50px auto 0;
+}
+
+.collection-showcase-view-all-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px;
+
+  width: 124px;
+  min-width: 124px;
+  height: 51px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 40px;
+  background: #222222;
+  color: #FFFFFF;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.collection-showcase-view-all-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.collection-showcase-view-all-btn:hover {
+  background: #DA2074;
+  border: none;
+  color: #FFFFFF;
+}
+
+
+/* ========================================
+   SMALL DESKTOP — 1201px TO 1600px
+   HORIZONTAL SCROLL, NO ARROWS
+======================================== */
+
+@media (min-width: 1201px) and (max-width: 1600px) {
+  .collection-showcase-products {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .collection-showcase-track {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 16px;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    overflow-x: auto !important;
+    overflow-y: hidden;
+
+    padding-bottom: 12px;
+    box-sizing: border-box;
+
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+
+    /* Show scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: #999999 #eeeeee;
+    -ms-overflow-style: auto;
+  }
+
+  .collection-showcase-track::-webkit-scrollbar {
+    display: block;
+    height: 8px;
+  }
+
+  .collection-showcase-track::-webkit-scrollbar-track {
+    background: #eeeeee;
+    border-radius: 10px;
+  }
+
+  .collection-showcase-track::-webkit-scrollbar-thumb {
+    background: #999999;
+    border-radius: 10px;
+  }
+
+  /* Fixed product card width */
+  .collection-showcase-product-item {
+    display: block;
+    flex: 0 0 300px;
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+
+    height: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    scroll-snap-align: start;
+  }
+
+  /* Hide navigation arrows */
+  .collection-showcase-arrow,
+  .collection-showcase-arrow-left,
+  .collection-showcase-arrow-right {
+    display: none !important;
+  }
+}
+
+
+/* ========================================
+   TABLET — 601px TO 1200px
+======================================== */
+
+@media (min-width: 601px) and (max-width: 1200px) {
+  .collection-showcase {
+    width: calc(100% - 48px);
+    max-width: 100%;
+    min-width: 0;
+    margin: 60px auto;
+    overflow-x: clip;
+    box-sizing: border-box;
+  }
+
+  .collection-showcase-content {
+    display: grid;
+    grid-template-columns: minmax(200px, 240px) minmax(0, 1fr);
+    gap: 16px;
+    min-width: 0;
+  }
+
+  .collection-showcase-banner {
+    width: 100%;
+    min-width: 0;
+    min-height: 440px;
+    box-sizing: border-box;
+  }
+
+  .collection-showcase-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 22px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .collection-showcase-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .collection-showcase-tabs button {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .collection-showcase-products {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .collection-showcase-track {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 16px;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    margin: 0;
+    padding: 0 0 12px;
+    box-sizing: border-box;
+
+
+    overflow-x: scroll !important;
+    overflow-y: hidden;
+
+
+    scroll-padding-left: 16px;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .collection-showcase-track::-webkit-scrollbar {
+    display: none;
+  }
+
+ .collection-showcase-product-item {
+  display: block;
+
+  flex: 0 0 300px;
+  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
+
+  height: auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  scroll-snap-align: start;
+}
+
+
+  .collection-showcase-product-item>* {
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  /* HIDE ARROWS */
+  .collection-showcase-arrow,
+  .collection-showcase-arrow-left,
+  .collection-showcase-arrow-right {
+    display: none !important;
+  }
+}
+
+
+/* ========================================
+   MOBILE — UP TO 600px
+======================================== */
+
+@media (max-width: 600px) {
+
+  .collection-showcase,
+  .collection-showcase * {
+    box-sizing: border-box;
+  }
+
+  .collection-showcase {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 0;
+    margin: 50px 0 0 0;
+    padding: 36px 0 24px;
+    overflow-x: clip;
+    background-color: #FAFAFA;
+  }
+
+  /* HEADING — ONE LINE */
+  .collection-showcase-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 32px);
+    max-width: 100%;
+    min-width: 0;
+    margin: 0 auto 24px;
+    padding: 0;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .collection-showcase-heading h2,
+  .collection-showcase-heading h2 span {
+    font-family: "Austin Trial", Georgia, serif;
+    font-size: clamp(18px, 5.5vw, 26px);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+
+  .collection-showcase-heading h2 {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* TABS — SINGLE ROW */
+  .collection-showcase-tabs {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 22px;
+    width: calc(100% - 32px);
+    max-width: 100%;
+    min-width: 0;
+    height: 36px;
+    margin: 0 auto 28px;
+    padding: 0 0 4px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .collection-showcase-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .collection-showcase-tabs button {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    max-width: none;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  /* BANNER ABOVE PRODUCTS */
+  .collection-showcase-content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 28px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .collection-showcase-banner {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    width: calc(100% - 32px);
+    max-width: 100%;
+    height: 319px;
+    min-height: 319px;
+    min-width: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .collection-showcase-banner-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+  }
+
+  .collection-showcase-banner-text {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top,
+        rgba(0, 0, 0, 0.7),
+        transparent);
+    z-index: 2;
+  }
+
+  .collection-showcase-banner-text h3 {
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 1.15;
+  }
+
+  .collection-showcase-banner-text p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 12px;
+  }
+
+  /* PRODUCT VIEWPORT */
+  .collection-showcase-products {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  /* FIXED GAP — NEVER STRETCH BETWEEN CARDS */
+  .collection-showcase-track {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: auto;
+    margin: 0;
+    padding: 0 16px 12px;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 16px;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .collection-showcase-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* FIXED CARD WIDTH — ALL MOBILE SIZES */
+  .collection-showcase-product-item {
+    display: block;
+    flex: 0 0 210px;
+    width: 220px;
+    min-width: 220px;
+    max-width: 220px;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+  }
+
+  .collection-showcase-product-item>* {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .collection-showcase-product-item img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* HIDE ARROWS ON MOBILE */
+  .collection-showcase-arrow,
+  .collection-showcase-arrow-left,
+  .collection-showcase-arrow-right {
+    display: none !important;
+  }
+
+
+  .collection-showcase-view-all-btn {
+    display: none;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE — BELOW 360px
+   KEEP SAME CARD WIDTH AND GAP
+======================================== */
+
+@media (max-width: 359px) {
+  .collection-showcase-heading {
+    width: calc(100% - 16px);
+    margin-bottom: 20px;
+  }
+
+  .collection-showcase-heading h2,
+  .collection-showcase-heading h2 span {
+    font-size: clamp(18px, 5.5vw, 20px);
+    letter-spacing: 0;
+  }
+
+  .collection-showcase-tabs {
+    width: calc(100% - 24px);
+    gap: 22px;
+  }
+
+  .collection-showcase-tabs button {
+    font-size: 13px;
+  }
+
+  .collection-showcase-banner {
+    width: calc(100% - 24px);
+    height: 290px;
+    min-height: 290px;
+  }
+
+  /* Do not change product gap or width */
+  .collection-showcase-track {
+    gap: 16px;
+    padding: 0 16px 12px;
+  }
+
+  .collection-showcase-product-item {
+    flex: 0 0 220px;
+    width: 220px;
+    min-width: 220px;
+    max-width: 220px;
+  }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .collection-showcase-tabs button,
+  .collection-showcase-arrow {
+    transition: none;
+  }
+
+  .collection-showcase-track {
+    scroll-behavior: auto;
+  }
+}
+
+
+
+
+
+

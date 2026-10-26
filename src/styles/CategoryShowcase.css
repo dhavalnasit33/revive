@@ -1,0 +1,462 @@
+
+/* ========================================
+   CATEGORY SHOWCASE
+======================================== */
+
+.category-showcase {
+  width: 100%;
+  max-width: 1640px;
+  min-height: 298px;
+  margin: 80px auto 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Flex", sans-serif;
+}
+
+/* ========================================
+   SECTION TITLE
+======================================== */
+
+.category-showcase-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin: 0 0 50px;
+
+  font-family: "Austin Trial", Georgia, serif;
+  font-size: 40px;
+  font-style: normal;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
+
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.category-showcase-title span:first-child {
+  color: #666666;
+  font-weight: 500;
+}
+
+.category-showcase-title span:nth-child(2) {
+  color: #000000;
+  font-weight: 500;
+}
+
+/* ========================================
+   CATEGORY GRID
+======================================== */
+
+.category-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   CATEGORY CARD
+======================================== */
+
+.category-showcase-card {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  width: 100%;
+  min-width: 0;
+  height: 200px;
+  padding: 24px;
+
+  background: #F5F5F5;
+  border: 1px solid transparent;
+  border-radius: 16px;
+
+  text-decoration: none;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  transition:
+    background-color 250ms ease-in,
+    border-color 250ms ease-in,
+    box-shadow 250ms ease-in;
+}
+
+.category-showcase-card:hover {
+  box-shadow: 0 4px 16px #0000000D;
+}
+
+.category-showcase-card:nth-child(1):hover {
+  background-color: #C2E5FF;
+  border-color: #C2E5FF;
+}
+
+.category-showcase-card:nth-child(2):hover {
+  background-color: #FFECBD;
+  border-color: #FFECBD;
+}
+
+.category-showcase-card:nth-child(3):hover {
+  background-color: #CDF4D3;
+  border-color: #CDF4D3;
+}
+
+.category-showcase-card:nth-child(4):hover {
+  background-color: #DCCCFF;
+  border-color: #DCCCFF;
+}
+
+/* ========================================
+   CATEGORY TEXT
+======================================== */
+
+.category-showcase-content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  min-width: 0;
+}
+
+.category-showcase-content h3 {
+  margin: 0;
+
+  color: #1E1E1E;
+  font-family: "Austin Trial", serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+
+  overflow-wrap: anywhere;
+  transition: color 250ms ease-in;
+}
+
+.category-showcase-content p {
+  margin: 6px 0 0;
+
+  color: #777777;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* ========================================
+   CATEGORY IMAGE
+======================================== */
+
+.category-showcase-image {
+  display: block;
+  position: relative;
+  z-index: 1;
+
+  flex: 0 0 auto;
+  width: 45%;
+  max-width: 145px;
+  height: 160px;
+  max-height: 80%;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+
+/* ========================================
+   LOADING AND ERROR MESSAGE
+======================================== */
+
+.category-showcase-status {
+  margin: 24px 0;
+  color: #666666;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.category-showcase-status[role="alert"] {
+  color: #DA2074;
+}
+
+
+
+/* ========================================
+   LAPTOP
+======================================== */
+
+@media (min-width: 1201px) {
+  .category-showcase {
+    padding: 0 24px;
+  }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (min-width: 601px) and (max-width: 1200px) {
+  .category-showcase {
+    min-height: auto;
+    margin-top: 60px;
+    padding: 0 24px;
+  }
+
+  .category-showcase-title {
+    margin-bottom: 32px;
+    font-size: 34px;
+  }
+
+  .category-showcase-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .category-showcase-card {
+    height: 194px;
+    padding: 20px;
+  }
+
+  .category-showcase-content h3 {
+    font-size: 30px;
+  }
+
+  .category-showcase-image {
+    width: 44%;
+    max-width: 140px;
+    height: 150px;
+  }
+}
+
+/* ========================================
+   MOBILE
+   Section target: 328 x 451px
+   Title: 26px
+   Cards: 156 x 194px
+======================================== */
+
+@media (max-width: 600px) {
+  .category-showcase {
+
+    position: relative;
+    width: 100%;
+    max-width: 328px;
+    min-height: 451px;
+    height: auto;
+
+    margin: 40px auto 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    overflow: visible;
+  }
+
+  /* Mobile heading */
+
+  .category-showcase-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    width: 100%;
+    margin: 0 0 24px;
+    padding: 0;
+
+    font-family: "Austin Trial", Georgia, serif;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: 0.78px;
+    text-align: center;
+  }
+
+  .category-showcase-title span:first-child,
+.category-showcase-title span:nth-child(2) {
+  font-weight: 500;
+}
+
+  /* Two cards per row */
+
+  .category-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 194px;
+    gap: 12px 16px;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    overflow: visible;
+    box-sizing: border-box;
+  }
+
+  /* Individual category card */
+
+.category-showcase-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  position: relative;
+  width: 100%;
+  max-width: 156px;
+  height: 194px;
+  padding: 8px 10px;
+
+  background: #F5F5F5;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.category-showcase-image {
+    
+  order: 1;
+  position: relative;
+  z-index: 2;
+
+  display: block;
+  flex: 0 0 125px;
+
+  width: 100%;
+  max-width: 120px;
+  height: 110px;
+  max-height: 110px;
+  min-height: 0;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+ .category-showcase-content {
+  order: 2;
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+  min-width: 0;
+  text-align: center;
+}
+
+.category-showcase-content h3 {
+  margin: 0;
+
+  color: #1E1E1E;
+  font-family: "Austin Trial", serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.2;
+
+  overflow-wrap: anywhere;
+}
+
+.category-showcase-content p {
+  margin: 3px 0 0;
+
+  color: #777777;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+/* Image stays in the remaining space below the text */
+
+
+  /* Touchscreens do not need hover effects */
+
+  @media (hover: none) {
+    .category-showcase-card:hover {
+      box-shadow: none;
+    }
+
+    .category-showcase-card:hover .category-showcase-image {
+      transform: none;
+    }
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 359px) {
+  .category-showcase {
+    width: calc(100% - 24px);
+    min-height: 451px;
+    margin-top: 32px;
+  }
+
+  .category-showcase-title {
+    gap: 5px;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+  }
+
+  .category-showcase-grid {
+    column-gap: 10px;
+    grid-auto-rows: 194px;
+  }
+
+  .category-showcase-card {
+    padding: 10px 8px 7px;
+  }
+
+  .category-showcase-content h3 {
+    font-size: 17px;
+  }
+
+  .category-showcase-content p {
+    font-size: 11px;
+  }
+
+  .category-showcase-image {
+    max-width: 105px;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .category-showcase-card,
+  .category-showcase-image,
+  .category-showcase-content h3 {
+    transition: none;
+  }
+
+  .category-showcase-card:hover .category-showcase-image {
+    transform: none;
+  }
+
+  .category-showcase-grid {
+    scroll-behavior: auto;
+  }
+}

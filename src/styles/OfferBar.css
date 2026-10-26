@@ -1,0 +1,493 @@
+/* ========================================
+   Offer Bar - Desktop
+======================================== */
+
+.offer-bar {
+  width: 100%;
+  max-width: 1920px;
+  height: 40px;
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  background-color: #222222;
+  color: #FFFFFF;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+
+    overflow: clip;
+}
+
+/* Viewport */
+
+.offer-viewport {
+  width: 705px;
+  max-width: calc(100% - 48px);
+  height: 40px;
+  min-width: 0;
+  flex: 0 1 705px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Slider track */
+
+.offer-track {
+  display: flex;
+  width: 200%;
+  height: 40px;
+  transform: translateX(0);
+  will-change: transform;
+}
+
+.offer-track-animated {
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Individual slide */
+
+.offer-slide {
+  flex: 0 0 50%;
+  width: 50%;
+  height: 40px;
+  min-width: 0;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+/* Offer text */
+
+.offer-text {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+
+  color: #FFFFFF;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Message and coupon layout */
+
+.offer-message {
+  display: inline;
+}
+
+.offer-code-wrapper {
+  display: inline;
+}
+
+.offer-separator {
+  margin: 0 8px;
+  color: #FFFFFF;
+}
+
+.offer-use-code {
+  display: inline;
+}
+
+.offer-code {
+  margin-left: 8px;
+  color: #DA2074;
+  font-weight: 700;
+}
+
+/* Navigation arrows */
+
+.offer-arrow {
+  flex: 0 0 12px;
+  width: 12px;
+  height: 16px;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.offer-arrow span {
+  display: block;
+  width: 8px;
+  height: 8px;
+
+  border-top: 2px solid #FFFFFF;
+  border-right: 2px solid #FFFFFF;
+
+  transition: border-color 200ms ease;
+}
+
+.offer-arrow-left span {
+  transform: rotate(-135deg);
+}
+
+.offer-arrow-right span {
+  transform: rotate(45deg);
+}
+
+.offer-arrow:hover span {
+  border-color: #DA2074;
+}
+
+.offer-arrow:disabled {
+  cursor: default;
+}
+
+/* ========================================
+   Laptop and Tablet
+   601px - 900px
+======================================== */
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .offer-bar {
+    height: 42px;
+    padding: 0 16px;
+    gap: 10px;
+  }
+
+  .offer-viewport {
+    width: 705px;
+    max-width: 100%;
+    height: 34px;
+    flex: 1 1 auto;
+  }
+
+  .offer-track,
+  .offer-slide {
+    height: 34px;
+  }
+
+  .offer-text {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 14px;
+    letter-spacing: 0.1px;
+    text-align: center;
+    white-space: nowrap;
+  }
+}
+
+/* ========================================
+   Mobile and Foldable Phones
+   361px - 600px
+======================================== */
+
+@media (min-width: 361px) and (max-width: 600px) {
+  .offer-bar {
+    width: 100%;
+    height: 42px;
+    min-height: 42px;
+    padding: 0 16px;
+    gap: 8px;
+  }
+
+  .offer-viewport {
+    width: auto;
+    max-width: none;
+    height: 32px;
+    min-width: 0;
+    flex: 1 1 0;
+  }
+
+  .offer-track,
+  .offer-slide {
+    height: 32px;
+  }
+
+  .offer-slide {
+    padding: 0;
+  }
+
+  .offer-text {
+    width: 100%;
+    max-width: 100%;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    text-align: center;
+
+    color: #FFFFFF;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+
+    overflow: hidden;
+    text-overflow: clip;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Message on the first line */
+
+  .offer-message {
+    display: block;
+  }
+
+  /* Coupon on the second line */
+
+  .offer-code-wrapper {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .offer-separator {
+    display: none;
+  }
+
+  .offer-use-code {
+    display: inline;
+  }
+
+  .offer-code {
+    display: inline;
+    margin-left: 5px;
+  }
+
+  .offer-arrow {
+    flex: 0 0 8px;
+    width: 8px;
+    height: 16px;
+  }
+
+  .offer-arrow span {
+    width: 6px;
+    height: 6px;
+    border-width: 1.5px;
+  }
+
+  .offer-viewport {
+    height: 34px;
+  }
+
+  .offer-track,
+  .offer-slide {
+    height: 34px;
+  }
+
+}
+
+
+
+/* ========================================
+   Small Phones
+   321px - 360px
+======================================== */
+
+@media (min-width: 321px) and (max-width: 360px) {
+  .offer-bar {
+    height: 42px;
+    min-height: 42px;
+    padding: 0 16px;
+    gap: 8px;
+  }
+
+  .offer-viewport {
+    width: auto;
+    max-width: none;
+    height: 32px;
+    min-width: 0;
+    flex: 1 1 0;
+  }
+
+  .offer-track,
+  .offer-slide {
+    height: 32px;
+  }
+
+  .offer-slide {
+    padding: 0;
+  }
+
+  .offer-text {
+    width: 100%;
+    max-height: 32px;
+
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 14px;
+    letter-spacing: 0.1px;
+    color: #FFFFFF;
+    text-align: center;
+
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: clip;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  .offer-message {
+    display: block;
+  }
+
+  .offer-code-wrapper {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .offer-separator {
+    display: none;
+  }
+
+  .offer-code {
+    margin-left: 4px;
+  }
+
+  .offer-arrow {
+    flex: 0 0 8px;
+    width: 8px;
+  }
+
+  .offer-arrow span {
+    width: 6px;
+    height: 6px;
+    border-width: 1.5px;
+  }
+
+  .offer-viewport {
+    height: 34px;
+  }
+
+  .offer-track,
+  .offer-slide {
+    height: 34px;
+  }
+
+}
+
+/* ========================================
+   Ultra-Small Phones
+   320px and below
+======================================== */
+
+@media (max-width: 320px) {
+  .offer-bar {
+    height: 42px;
+    min-height: 42px;
+    padding: 0 10px;
+    gap: 6px;
+  }
+
+  .offer-viewport {
+    width: auto;
+    max-width: none;
+    height: 32px;
+    min-width: 0;
+    flex: 1 1 0;
+  }
+
+  .offer-track,
+  .offer-slide {
+    height: 32px;
+  }
+
+  .offer-slide {
+    padding: 0;
+  }
+
+  .offer-text {
+    width: 100%;
+    max-height: 32px;
+
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 14px;
+    letter-spacing: 0.1px;
+    color: #FFFFFF;
+    text-align: center;
+
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: clip;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  .offer-message {
+    display: block;
+  }
+
+  .offer-code-wrapper {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .offer-separator {
+    display: none;
+  }
+
+  .offer-code {
+    margin-left: 3px;
+  }
+
+  .offer-arrow {
+    flex: 0 0 7px;
+    width: 7px;
+  }
+
+  .offer-arrow span {
+    width: 5px;
+    height: 5px;
+    border-width: 1.5px;
+  }
+
+  .offer-viewport {
+    height: 34px;
+  }
+
+  .offer-track,
+  .offer-slide {
+    height: 34px;
+  }
+}
+
+/* ========================================
+   Reduced Motion
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .offer-track-animated {
+    transition: none;
+  }
+}
